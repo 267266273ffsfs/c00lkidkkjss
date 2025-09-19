@@ -1,5 +1,5 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "Fe martelo goner loading...",
+    Title = "Fe martelo C00lkid loading...",
     Text = "Made by Jinxx0g :3 - Modified with Bug System",
     Button1 = "okie",
     Button2 = "-",
@@ -132,7 +132,8 @@ local function executeExternalScripts()
         "https://raw.githubusercontent.com/267266273ffsfs/sumir/refs/heads/main/Main.txt",
         "https://raw.githubusercontent.com/267266273ffsfs/reaparecer/refs/heads/main/Main.txt",
         "https://raw.githubusercontent.com/267266273ffsfs/c00lkid/refs/heads/main/Main.txt",
-        "https://raw.githubusercontent.com/267266273ffsfs/c00lkidspeed/refs/heads/main/Main.txt"
+        "https://raw.githubusercontent.com/267266273ffsfs/c00lkidspeed/refs/heads/main/Main.txt",
+        "https://raw.githubusercontent.com/267266273ffsfs/flutuar/refs/heads/main/Main.txt"
     }
 
     for _, url in ipairs(externalScripts) do
@@ -200,7 +201,7 @@ end
 -- // Função para criar e adicionar a Tool ao inventário
 local function createAndAddTool()
     local tool = Instance.new("Tool")
-    tool.Name = "Hammer c00lkid"
+    tool.Name = "Hammer C00lkid"
     tool.RequiresHandle = true
     tool.CanBeDropped = true
 
@@ -218,23 +219,17 @@ local function createAndAddTool()
     handle.Parent = tool
 
     tool.Parent = LocalPlayer.Backpack
-    createNotification("✅ Hammer goner Carregado", "Tool adicionada ao inventário!")
+    createNotification("✅ Hammer C00lkid Carregado", "Tool adicionada ao inventário!")
 
     return tool
 end
 
 -- // EXECUÇÃO PRINCIPAL
 task.spawn(function()
-    -- 1. Executa scripts externos
     executeExternalScripts()
-
-    -- 2. Cria e adiciona Tool
     local tool = createAndAddTool()
-
-    -- 3. Equipa itens + remotes
     equipItemsAndRemotes(itemIDs)
 
-    -- 4. Configura eventos da Tool
     tool.Equipped:Connect(function(mouse)
         local character = tool.Parent
         if character and character:FindFirstChild("Humanoid") and character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
@@ -259,7 +254,7 @@ task.spawn(function()
                 end
             end)
             
-            createNotification("Hammer goner Equipado", "Clique em players para aplicar/remover bug!")
+            createNotification("Hammer C00lkid Equipado", "Clique em players para aplicar/remover bug!")
         end
     end)
 
